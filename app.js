@@ -54,7 +54,24 @@ if ("IntersectionObserver" in window) {
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const heroVideo = document.querySelector("[data-hero-video]");
+const heroVideoToggle = document.querySelector("[data-video-toggle]");
 if (heroVideo && reducedMotion.matches) heroVideo.pause();
+
+if (heroVideo && heroVideoToggle) {
+  const syncVideoToggle = () => {
+    const playing = !heroVideo.paused;
+    heroVideoToggle.dataset.playing = String(playing);
+    heroVideoToggle.setAttribute("aria-label", playing ? "Pause showreel" : "Play showreel");
+  };
+
+  heroVideo.addEventListener("play", syncVideoToggle);
+  heroVideo.addEventListener("pause", syncVideoToggle);
+  heroVideoToggle.addEventListener("click", () => {
+    if (heroVideo.paused) void heroVideo.play();
+    else heroVideo.pause();
+  });
+  syncVideoToggle();
+}
 
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = [...carousel.querySelectorAll(".gallery-slide")];
