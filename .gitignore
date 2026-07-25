@@ -1,0 +1,5 @@
+.playwright-cli/
+output/
+design/
+hyperframes-brand-film/
+*.log
