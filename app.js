@@ -73,6 +73,44 @@ if (heroVideo && heroVideoToggle) {
   syncVideoToggle();
 }
 
+const featureVideo = document.querySelector("[data-feature-video]");
+const featurePlayButton = document.querySelector("[data-feature-play]");
+const featureSoundButton = document.querySelector("[data-feature-sound]");
+
+if (featureVideo && featurePlayButton && featureSoundButton) {
+  const playLabel = featurePlayButton.querySelector("[data-feature-play-label]");
+  const soundLabel = featureSoundButton.querySelector("[data-feature-sound-label]");
+
+  const syncFeatureControls = () => {
+    const playing = !featureVideo.paused;
+    const muted = featureVideo.muted;
+    featurePlayButton.dataset.playing = String(playing);
+    featurePlayButton.setAttribute("aria-label", playing ? "Pause featured video" : "Play featured video");
+    featurePlayButton.title = playing ? "Pause featured video" : "Play featured video";
+    featureSoundButton.dataset.muted = String(muted);
+    featureSoundButton.setAttribute("aria-label", muted ? "Turn featured video sound on" : "Turn featured video sound off");
+    featureSoundButton.title = muted ? "Turn featured video sound on" : "Turn featured video sound off";
+    if (playLabel) playLabel.textContent = playing ? "Pause" : "Play";
+    if (soundLabel) soundLabel.textContent = muted ? "Sound on" : "Sound off";
+  };
+
+  featurePlayButton.addEventListener("click", () => {
+    if (featureVideo.paused) void featureVideo.play();
+    else featureVideo.pause();
+  });
+
+  featureSoundButton.addEventListener("click", () => {
+    featureVideo.muted = !featureVideo.muted;
+    if (featureVideo.paused) void featureVideo.play();
+    syncFeatureControls();
+  });
+
+  featureVideo.addEventListener("play", syncFeatureControls);
+  featureVideo.addEventListener("pause", syncFeatureControls);
+  featureVideo.addEventListener("volumechange", syncFeatureControls);
+  syncFeatureControls();
+}
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = [...carousel.querySelectorAll(".gallery-slide")];
   const indexLabel = carousel.querySelector("[data-carousel-index]");

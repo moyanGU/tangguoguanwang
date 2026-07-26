@@ -122,13 +122,24 @@
       </section>
 
       <section class="home-feature" aria-labelledby="feature-title">
-        <div class="feature-media reveal"><img src="assets/images/work-moge.webp" alt="Key art for Moge's Extraordinary Highway Season 2" /></div>
+        <div class="feature-media">
+          <video class="feature-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/moge-signature-video-poster.webp" data-feature-video aria-describedby="feature-summary">
+            <source src="assets/videos/moge-signature-30s.mp4" type="video/mp4" />
+          </video>
+          <div class="feature-shade" aria-hidden="true"></div>
+        </div>
         <div class="feature-copy reveal">
-          <p class="eyebrow dark">MOST-WATCHED AI COMIC DRAMA</p>
-          <p class="feature-number">1.2B</p>
-          <h2 id="feature-title">Moge's Extraordinary Highway</h2>
-          <p>A post-apocalyptic survival series where an upgrade system turns a refugee convoy into humanity's last moving fortress.</p>
-          <a class="dark-link" href="work.html">See the full portfolio <span aria-hidden="true">→</span></a>
+          <p class="eyebrow">ONE OF CANDY SEA OVERSEAS' SIGNATURE WORKS</p>
+          <div class="feature-heading">
+            <h2 id="feature-title">Moge's Extraordinary Highway</h2>
+            <p class="feature-number"><strong>1.2B</strong><span>Official-content plays</span></p>
+          </div>
+          <p id="feature-summary" class="feature-summary">A post-apocalyptic survival epic where an upgrade system turns a refugee convoy into humanity's last moving fortress.</p>
+          <div class="feature-meta"><span>AI COMIC DRAMA</span><span>30-SECOND PREVIEW</span><a class="text-link" href="work.html">See the full portfolio <span aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="feature-controls" aria-label="Featured video controls">
+          <button class="feature-control" type="button" data-feature-play data-playing="true" aria-label="Pause featured video" title="Pause featured video"><span class="feature-control-icon feature-play-icon" aria-hidden="true"></span><span data-feature-play-label>Pause</span></button>
+          <button class="feature-control" type="button" data-feature-sound data-muted="true" aria-label="Turn featured video sound on" title="Turn featured video sound on"><span class="feature-control-icon feature-sound-icon" aria-hidden="true"></span><span data-feature-sound-label>Sound on</span></button>
         </div>
       </section>
 
