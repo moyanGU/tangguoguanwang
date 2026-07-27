@@ -15,7 +15,7 @@ python -m http.server 4173
 
 - `index.html`：官网页面与可访问性结构。
 - `styles.css`：响应式视觉与交互动效。
-- `app.js`：导航、滚动揭示、视频弹窗、环境轮播与表单演示逻辑。
+- `app.js`：导航、滚动揭示、视频控制与环境轮播交互逻辑。
 - `design/frame.md`：品牌视觉规范。
 - `design/figma-tokens.json`：可导入 Figma Tokens 的设计变量。
 - `hyperframes-brand-film/`：HyperFrames 品牌动效工程。
