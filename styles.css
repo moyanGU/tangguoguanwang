@@ -502,3 +502,15 @@ h1, h2, h3, h4, p { overflow-wrap: break-word; }
   .gallery-controls { right: 16px; bottom: 22px; }
   .site-footer { padding: 30px 18px; }
 }
+.legal-links { display: flex; flex-wrap: wrap; gap: 16px; }
+.legal-links a { color: inherit; text-underline-offset: 4px; }
+.site-header.is-solid { background: #0d0b10; }
+.legal-page { min-height: 100vh; padding: 140px clamp(20px, 7vw, 112px) 80px; background: #f3f1eb; color: #151515; }
+.legal-content { max-width: 840px; margin: 0 auto; }
+.legal-content .eyebrow { color: #735cff; }
+.legal-content h1 { margin: 0 0 16px; font-size: clamp(48px, 8vw, 96px); line-height: .95; letter-spacing: -.06em; }
+.legal-meta { margin-bottom: 56px; color: #68655f; }
+.legal-content h2 { margin: 48px 0 14px; font-size: clamp(24px, 4vw, 34px); letter-spacing: -.035em; }
+.legal-content p, .legal-content li { color: #44413d; line-height: 1.75; }
+.legal-content ul { padding-left: 22px; }
+.legal-content a { color: #151515; text-underline-offset: 4px; }
